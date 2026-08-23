@@ -1,0 +1,28 @@
+{
+  "name": "family-tree-recovered",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sync-data": "node scripts/sync-family-data.mjs",
+    "predev": "npm run sync-data",
+    "dev": "next dev",
+    "prebuild": "npm run sync-data",
+    "build": "next build",
+    "prestart": "npm run sync-data",
+    "start": "next dev",
+    "preview": "serve out"
+  },
+  "dependencies": {
+    "@balkangraph/familytree.js": "1.9.44",
+    "next": "15.5.23",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "serve": "14.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}

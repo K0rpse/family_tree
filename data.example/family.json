@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "pids": [2],
+    "name": "Alex Example",
+    "gender": "male",
+    "img": "img/alex.svg"
+  },
+  {
+    "id": 2,
+    "pids": [1],
+    "name": "Sam Example",
+    "gender": "female",
+    "img": "img/sam.svg"
+  },
+  {
+    "id": 3,
+    "fid": 1,
+    "mid": 2,
+    "name": "Charlie Example",
+    "gender": "female",
+    "img": "img/charlie.svg"
+  }
+]

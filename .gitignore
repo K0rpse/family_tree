@@ -1,0 +1,23 @@
+# Dependencies and Next.js build artifacts
+node_modules/
+.next/
+out/
+
+# Local environment files
+.env*
+!.env.example
+
+# Private family information (never commit)
+data/
+
+# Generated public copy of private family information
+public/family-data/
+
+# Recovered deployment: contains embedded family names and photos
+recovered-deployment/
+
+# Logs and editor/system files
+*.log
+.DS_Store
+.idea/
+.vscode/
