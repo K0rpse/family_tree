@@ -17,6 +17,7 @@ export function FamilyTree() {
   const searchQueryRef = useRef("");
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<FamilySearchResult[]>([]);
+  const [totalResults, setTotalResults] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [treeReady, setTreeReady] = useState(false);
 
@@ -25,10 +26,12 @@ export function FamilyTree() {
 
     if (!activeTree || searchTerm.length < 2) {
       setResults([]);
+      setTotalResults(0);
       return;
     }
 
     const matches = activeTree.search(searchTerm, ["name"], ["name"]);
+    setTotalResults(matches.length);
     setResults(matches.slice(0, MAX_SEARCH_RESULTS));
   }
 
@@ -172,9 +175,9 @@ export function FamilyTree() {
             ) : (
               <>
                 <p className="family-search__count">
-                  {results.length === 1
+                  {totalResults === 1
                     ? "1 personne trouvée"
-                    : `${results.length}${results.length === MAX_SEARCH_RESULTS ? "+" : ""} personnes trouvées`}
+                    : `${totalResults} personnes trouvées`}
                 </p>
                 <ul className="family-search__list">
                   {results.map((person) => (
@@ -192,7 +195,7 @@ export function FamilyTree() {
                     </li>
                   ))}
                 </ul>
-                {results.length === MAX_SEARCH_RESULTS && (
+                {totalResults > MAX_SEARCH_RESULTS && (
                   <p className="family-search__hint">
                     Affichage des {MAX_SEARCH_RESULTS} premiers résultats. Précise le nom pour affiner.
                   </p>
