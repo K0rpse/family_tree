@@ -20,3 +20,150 @@ main,
   width: 100%;
   height: 100vh;
 }
+
+.family-search {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  width: min(360px, calc(100vw - 32px));
+  color: #111827;
+}
+
+.family-search__form {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.family-search__label {
+  display: block;
+  margin: 0 0 8px 2px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.family-search__input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.family-search__icon {
+  color: #64748b;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.family-search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #111827;
+  font: inherit;
+  font-size: 14px;
+}
+
+.family-search__input::placeholder {
+  color: #94a3b8;
+}
+
+.family-search__input:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.family-search__clear {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.family-search__clear:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.family-search__results {
+  max-height: min(52vh, 380px);
+  overflow-y: auto;
+  margin-top: 8px;
+  padding: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.family-search__count,
+.family-search__message,
+.family-search__hint {
+  margin: 0;
+  padding: 8px 10px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.family-search__count {
+  font-weight: 700;
+}
+
+.family-search__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.family-search__result {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #0f172a;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+}
+
+.family-search__result:hover,
+.family-search__result:focus-visible {
+  outline: none;
+  background: #eff6ff;
+}
+
+.family-search__person-icon {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .family-search {
+    top: 10px;
+    left: 10px;
+    width: calc(100vw - 20px);
+  }
+}
